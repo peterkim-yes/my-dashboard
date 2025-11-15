@@ -3,17 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나만의 대시보드</title>
+    <title>DASHBOARD</title>
     <link rel="stylesheet" href="style.css"> </head>
 <body>
     <section id="schedule">
-        <h2>오늘의 일정</h2>
-        <iframe src="[<iframe src="https://calendar.google.com/calendar/embed?src=sunkyu0702%40gmail.com&ctz=Asia%2FSeoul" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>]" width="300" height="200" frameborder="0"></iframe>
+    <h2>오늘의 일정</h2>
+    
+    <iframe 
+        src="https://calendar.google.com/calendar/embed?src=sunkyu0702%40gmail.com&ctz=Asia%2FSeoul" 
+        style="border: 0" 
+        width="800" 
+        height="600" 
+        frameborder="0" 
+        scrolling="no">
+    </iframe> 
     </section>
 
     <section id="economy">
         <h2>경제 뉴스 및 주식</h2>
-        <p>경제 뉴스 피드가 들어갈 공간</p>
+        <p><!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener nofollow" target="_blank"><span class="blue-text">World markets</span></a><span class="trademark"> by TradingView</span></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+  {
+  "colorTheme": "dark",
+  "dateRange": "1D",
+  "locale": "en",
+  "largeChartUrl": "",
+  "isTransparent": false,
+  "showFloatingTooltip": false,
+  "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+  "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+  "gridLineColor": "rgba(240, 243, 250, 0)",
+  "scaleFontColor": "#DBDBDB",
+  "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+  "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+  "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+  "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+  "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+  "tabs": [
+    {
+      "title": "Indices",
+      "symbols": [
+        {
+          "s": "BINANCE:BTCUSDT",
+          "d": "BTC",
+          "base-currency-logoid": "crypto/XTVCBTC",
+          "currency-logoid": "crypto/XTVCUSDT"
+        },
+        {
+          "s": "BINANCE:ETHUSD",
+          "d": "ETH",
+          "base-currency-logoid": "crypto/XTVCETH",
+          "currency-logoid": "country/US"
+        }
+      ],
+      "originalTitle": "Indices"
+    },
+    {
+      "title": "Futures",
+      "symbols": [
+        {
+          "s": "BMFBOVESPA:ISP1!",
+          "d": "S&P 500"
+        },
+        {
+          "s": "BMFBOVESPA:EUR1!",
+          "d": "Euro"
+        },
+        {
+          "s": "CMCMARKETS:GOLD",
+          "d": "Gold"
+        },
+        {
+          "s": "PYTH:WTI3!",
+          "d": "WTI Crude Oil"
+        },
+        {
+          "s": "BMFBOVESPA:CCM1!",
+          "d": "Corn"
+        }
+      ],
+      "originalTitle": "Futures"
+    },
+    {
+      "title": "Bonds",
+      "symbols": [
+        {
+          "s": "EUREX:FGBL1!",
+          "d": "Euro Bund"
+        },
+        {
+          "s": "EUREX:FBTP1!",
+          "d": "Euro BTP"
+        },
+        {
+          "s": "EUREX:FGBM1!",
+          "d": "Euro BOBL"
+        }
+      ],
+      "originalTitle": "Bonds"
+    },
+    {
+      "title": "Forex",
+      "symbols": [
+        {
+          "s": "FX:EURUSD",
+          "d": "EUR to USD"
+        },
+        {
+          "s": "FX:GBPUSD",
+          "d": "GBP to USD"
+        },
+        {
+          "s": "FX:USDJPY",
+          "d": "USD to JPY"
+        },
+        {
+          "s": "FX:USDCHF",
+          "d": "USD to CHF"
+        },
+        {
+          "s": "FX:AUDUSD",
+          "d": "AUD to USD"
+        },
+        {
+          "s": "FX:USDCAD",
+          "d": "USD to CAD"
+        }
+      ],
+      "originalTitle": "Forex"
+    }
+  ],
+  "support_host": "https://www.tradingview.com",
+  "backgroundColor": "#0f0f0f",
+  "width": "400",
+  "height": "550",
+  "showSymbolLogo": true,
+  "showChart": true
+}
+  </script>
+</div>
+<!-- TradingView Widget END --></p>
     </section>
 
     <section id="design">
