@@ -5,40 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASHBOARD</title>
 
+    <!-- 1. Bootstrap CSS 연결 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
+    <!-- 2. 나만의 다크 모드 스타일 연결 -->
     <link rel="stylesheet" href="style.css"> 
 </head>
 
 <body>
     
+    <!-- Bootstrap 컨테이너 시작 -->
     <div class="container mt-5"> 
         <header class="text-center mb-5">
             <h1 class="display-4">나만의 통합 대시보드</h1>
         </header>
 
+        <!-- 메인 ROW: 2:1 비율 분할 -->
         <div class="row">
             
+            <!-- 📌 왼쪽 컬럼 (8/12 크기: 스케줄, 차트, 노션) -->
             <div class="col-md-8">
                 
-                <section id="schedule" class="card p-3 mb-4">
-                    <h2>오늘의 일정</h2>
-                    <iframe 
-                        src="https://calendar.google.com/calendar/embed?src=sunkyu0702%40gmail.com&ctz=Asia%2FSeoul" 
-                        style="border: 0" 
-                        width="100%" 
-                        height="600" 
-                        frameborder="0" 
-                        scrolling="no">
-                    </iframe>
-                </section>
-                
+                <!-- 💡 내부 ROW: 스케줄과 차트를 나란히 50%씩 배치 -->
+                <div class="row">
+                    
+                    <!-- 1. 스케줄 섹션 (50%) -->
+                    <div class="col-md-6">
+                        <section id="schedule" class="card p-3 mb-4">
+                            <h2>오늘의 일정</h2>
+                            <iframe 
+                                src="https://calendar.google.com/calendar/embed?src=sunkyu0702%40gmail.com&ctz=Asia%2FSeoul" 
+                                style="border: 0" 
+                                width="100%" 
+                                height="550" 
+                                frameborder="0" 
+                                scrolling="no">
+                            </iframe>
+                        </section>
+                    </div>
+
+                    <!-- 2. 새로운 차트 위젯 섹션 (50%) -->
+                    <div class="col-md-6">
+                        <section id="chart-widget" class="card p-3 mb-4">
+                            <h2>업무 통계 차트</h2>
+                            <!-- 여기에 원하는 차트 위젯 코드를 삽입하세요. -->
+                            <div style="height: 550px; display: flex; align-items: center; justify-content: center; background-color: #2a2a2a; border-radius: 8px;">
+                                <p style="color: #999; text-align: center;">여기에 **업무 성과 차트** (예: Google Charts, D3.js) 코드를 <br>붙여넣어 주세요. (높이 550px)</p>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+                <!-- 내부 ROW 종료 -->
+
+                <!-- 3. 디자인/노션 섹션 (전체 너비) -->
                 <section id="design" class="card p-3 mb-4">
                     <h2>디자인 영감 (노션 임베드)</h2>
                     <iframe 
                         src="https://cut-midnight-8d0.notion.site/ebd/f9c038827137408c883593fef6914b44" 
                         width="100%" 
-                        height="600" 
+                        height="550" 
                         frameborder="0" 
                         allowfullscreen>
                     </iframe>
@@ -46,11 +72,14 @@
 
             </div>
 
+            <!-- 📌 오른쪽 컬럼 (4/12 크기: 경제) -->
             <div class="col-md-4">
                 
+                <!-- 4. 경제/주식 섹션 (TradingView) -->
                 <section id="economy" class="card p-3 mb-4">
                     <h2>경제 뉴스 및 주식</h2>
                     
+                    <!-- TradingView Widget BEGIN -->
                     <div class="tradingview-widget-container">
                         <div class="tradingview-widget-container__widget"></div>
                         <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener nofollow" target="_blank"><span class="blue-text">World markets</span></a><span class="trademark"> by TradingView</span></div>
@@ -72,70 +101,5 @@
                             "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
                             "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
                             "tabs": [
-                                {
-                                    "title": "Indices",
-                                    "symbols": [
-                                        { "s": "BINANCE:BTCUSDT", "d": "BTC", "base-currency-logoid": "crypto/XTVCBTC", "currency-logoid": "crypto/XTVCUSDT" },
-                                        { "s": "BINANCE:ETHUSD", "d": "ETH", "base-currency-logoid": "crypto/XTVCETH", "currency-logoid": "country/US" }
-                                    ],
-                                    "originalTitle": "Indices"
-                                },
-                                {
-                                    "title": "Futures",
-                                    "symbols": [
-                                        { "s": "BMFBOVESPA:ISP1!", "d": "S&P 500" },
-                                        { "s": "BMFBOVESPA:EUR1!", "d": "Euro" },
-                                        { "s": "CMCMARKETS:GOLD", "d": "Gold" },
-                                        { "s": "PYTH:WTI3!", "d": "WTI Crude Oil" },
-                                        { "s": "BMFBOVESPA:CCM1!", "d": "Corn" }
-                                    ],
-                                    "originalTitle": "Futures"
-                                },
-                                {
-                                    "title": "Bonds",
-                                    "symbols": [
-                                        { "s": "EUREX:FGBL1!", "d": "Euro Bund" },
-                                        { "s": "EUREX:FBTP1!", "d": "Euro BTP" },
-                                        { "s": "EUREX:FGBM1!", "d": "Euro BOBL" }
-                                    ],
-                                    "originalTitle": "Bonds"
-                                },
-                                {
-                                    "title": "Forex",
-                                    "symbols": [
-                                        { "s": "FX:EURUSD", "d": "EUR to USD" },
-                                        { "s": "FX:GBPUSD", "d": "GBP to USD" },
-                                        { "s": "FX:USDJPY", "d": "USD to JPY" },
-                                        { "s": "FX:USDCHF", "d": "USD to CHF" },
-                                        { "s": "FX:AUDUSD", "d": "AUD to USD" },
-                                        { "s": "FX:USDCAD", "d": "USD to CAD" }
-                                    ],
-                                    "originalTitle": "Forex"
-                                }
-                            ],
-                            "support_host": "https://www.tradingview.com",
-                            "backgroundColor": "#0f0f0f",
-                            "width": "100%", /* 400px에서 100%로 변경하여 컬럼 너비에 맞춤 */
-                            "height": "550",
-                            "showSymbolLogo": true,
-                            "showChart": true
-                        }
-                        </script>
-                    </div>
-                    </section>
-                
-                <section id="extra" class="card p-3 mb-4">
-                    <h2>추가 정보 섹션</h2>
-                    <p>이곳에 RSS 피드나 다른 위젯을 추가할 수 있습니다.</p>
-                </section>
-
-            </div>
-            
-        </div>
-    </div>
-    
-    <script src="main.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-</body>
-</html>
+                                { "title": "Indices", "symbols": [ { "s": "BINANCE:BTCUSDT", "d": "BTC", "base-currency-logoid": "crypto/XTVCBTC", "currency-logoid": "crypto/XTVCUSDT" }, { "s": "BINANCE:ETHUSD", "d": "ETH", "base-currency-logoid": "crypto/XTVCETH", "currency-logoid": "country/US" } ], "originalTitle": "Indices" },
+                                { "title": "Futures", "symbols": [ { "s": "BMFBOVESPA:ISP1!", "d": "S&P 500" }, { "s": "BMFBOVESPA:EUR
